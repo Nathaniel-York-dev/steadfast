@@ -1,6 +1,6 @@
 {
   "name": "@steadfast-devs/stenographer",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A utility for logging and debugging in client side applications",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
