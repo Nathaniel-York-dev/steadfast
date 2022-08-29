@@ -1,5 +1,14 @@
 # CHANGELOG
 
+# 1.1.0 (2022-08-29)
+
+
+### Bug Fixes
+
+* **packages/stenographer:** expose correctly the necessary classes ([ee3d007](https://github.com/Nathaniel-York-dev/steadfast/commit/ee3d0074149823309150de5c454f1315b7477155))
+
+
+
 # 1.0.0 (2022-08-29)
 
 
