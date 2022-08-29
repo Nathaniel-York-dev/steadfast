@@ -1,4 +1,4 @@
-import { Levels } from '../enum/levels'
+import { Level } from '../enum/level'
 import { Payload } from '../entities/payload'
 
 export class Client {
@@ -14,7 +14,7 @@ export class Client {
     return Client.instance
   }
 
-  private sendLog (message: Payload, level: Levels) {
+  private sendLog (message: Payload, level: Level) {
     return fetch(this.server, {
       headers: { 'Content-Type': 'application/json' },
       method: 'POST',
@@ -23,15 +23,15 @@ export class Client {
   }
 
   private info (message: Payload) {
-    return this.sendLog(message, Levels.INFO)
+    return this.sendLog(message, Level.INFO)
   }
 
   private error (message: Payload) {
-    return this.sendLog(message, Levels.ERROR)
+    return this.sendLog(message, Level.ERROR)
   }
 
   private warn (message: Payload) {
-    return this.sendLog(message, Levels.WARN)
+    return this.sendLog(message, Level.WARN)
   }
 
   /**
@@ -39,7 +39,7 @@ export class Client {
    * @param message
    * @param level
    */
-  public log (message: string, level: Levels = Levels.INFO) {
+  public log (message: string, level: Level = Level.INFO) {
     const payload: Payload = {
       time: new Date().toISOString(),
       instance: location.hostname,
@@ -48,11 +48,11 @@ export class Client {
       message
     }
     switch (level) {
-      case Levels.ERROR:
+      case Level.ERROR:
         return this.error(payload)
-      case Levels.WARN:
+      case Level.WARN:
         return this.warn(payload)
-      case Levels.INFO:
+      case Level.INFO:
       default:
         return this.info(payload)
     }

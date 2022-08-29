@@ -1,4 +1,4 @@
-import { Levels } from '../enum/levels';
+import { Level } from '../enum/level';
 export declare class Client {
     private static instance;
     private readonly server;
@@ -12,5 +12,5 @@ export declare class Client {
      * @param message
      * @param level
      */
-    log(message: string, level?: Levels): Promise<Response>;
+    log(message: string, level?: Level): Promise<Response>;
 }

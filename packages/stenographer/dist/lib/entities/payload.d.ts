@@ -1,8 +1,8 @@
-import { Levels } from '../enum/levels';
+import { Level } from '../enum/level';
 export interface Payload {
     time: string;
     instance: string;
     path: string;
-    level: Levels;
+    level: Level;
     message: string;
 }

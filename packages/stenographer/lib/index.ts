@@ -1,11 +1,7 @@
-import { Server } from './stenographer/server'
-import { Client } from './stenographer/client'
+import { Server as toExportServer } from './stenographer/server'
+import { Client as toExportClient } from './stenographer/client'
+import {Level as toExportLevel} from "./enum/level";
 
-let exporter: any
-console.log('process.env.NODE_ENV', process?.env?.NODE_ENV)
-if (process?.env?.NODE_ENV) {
-  exporter = { ...exporter, StenographerServer: Server }
-} else {
-  exporter = { ...exporter, StenographerClient: Client }
-}
-export default exporter
+export const Server = toExportServer
+export const Client = toExportClient
+export const Level = toExportLevel
