@@ -1,16 +1,26 @@
 {
   "name": "steadfast",
   "version": "1.0.0",
+  "private": false,
   "workspaces": [
     "packages/*"
   ],
+  "config": {
+    "sui-mono": {
+      "access": "public"
+    },
+    "validate-commit-msg": {
+      "types": "@s-ui/mono/src/types"
+    }
+  },
   "scripts": {
+    "co": "sui-mono commit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@s-ui/mono": "^2.31.0"
+    "@s-ui/mono": "2"
   }
 }
