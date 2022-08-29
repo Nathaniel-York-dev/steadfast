@@ -1,14 +1,14 @@
 import { promises as fs } from 'fs'
-import { Payload } from './entities/payload'
+import { Payload } from '../entities/payload'
 
-export class LogServer {
+export class Server {
   // eslint-disable-next-line no-use-before-define
-  private static instance: LogServer
+  private static instance: Server
   constructor () {
-    if (!LogServer.instance) {
-      LogServer.instance = this
+    if (!Server.instance) {
+      Server.instance = this
     }
-    return LogServer.instance
+    return Server.instance
   }
 
   public logMessage (payload: Payload) {

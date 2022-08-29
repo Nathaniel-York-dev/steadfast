@@ -1,17 +1,17 @@
-import { Levels } from './enum/levels'
-import { Payload } from './entities/payload'
+import { Levels } from '../enum/levels'
+import { Payload } from '../entities/payload'
 
-export class Logger {
+export class Client {
   // eslint-disable-next-line no-use-before-define
-  private static instance: Logger
-  private server!: string
+  private static instance: Client
+  private readonly server!: string
 
   public constructor (server: string) {
     this.server = server
-    if (!Logger.instance) {
-      Logger.instance = this
+    if (!Client.instance) {
+      Client.instance = this
     }
-    return Logger.instance
+    return Client.instance
   }
 
   private sendLog (message: Payload, level: Levels) {
