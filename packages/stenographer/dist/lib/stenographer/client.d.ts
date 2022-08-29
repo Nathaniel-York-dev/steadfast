@@ -1,5 +1,5 @@
-import { Levels } from './enum/levels';
-export declare class Stenographer {
+import { Levels } from '../enum/levels';
+export declare class Client {
     private static instance;
     private readonly server;
     constructor(server: string);
